@@ -49,6 +49,12 @@ jobs:
             cd frontend
             npm i
             npm build 
+      - slack/notify:
+          event: fail          
+          template: basic_fail_1
+      - slack/notify:
+          event: success          
+          template: basic_success_1
       - save_cache:
           paths: [frontend/node_modules]
           key: frontend-build
@@ -69,6 +75,9 @@ jobs:
       - slack/notify:
           event: fail          
           template: basic_fail_1
+      - slack/notify:
+          event: success          
+          template: basic_success_1
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build

@@ -75,7 +75,7 @@ jobs:
           name: Front-end test
           command: |
             cd frontend 
-            npm run build 
+            npm run test 
                 
   test-backend:
     docker:
